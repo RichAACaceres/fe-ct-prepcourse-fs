@@ -171,7 +171,7 @@ function mesesDelAño(array) {
    }
    if(aux.length===3){
        return aux;
-   }return 'No se encontro los meses pedidos';
+   }return 'No se encontraron los meses pedidos';
    
 }
 
@@ -212,11 +212,13 @@ function breakStatement(num) {
    var aumt=[];
    for (var i=0;i<10;i++){
       num=num+2;
-      aumt.push(num);
-      if(num===i){
-         return 'Se interrumpió la ejecucion';
-         break;
-      }
+      //aumt.push(num);
+      if(num!==i){
+         aumt.push(num);
+         //return 'Se interrumpió la ejecucion';
+         //break;
+      }else { return 'Se interrumpió la ejecución';
+      break;}
    }
    return aumt;
 }
@@ -228,6 +230,14 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var aumt=[];
+   for (var i=0;i<10;i++){
+      if (i!==5){
+      num=num+2;
+      aumt.push(num);
+      }continue;
+   }
+   return aumt;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
